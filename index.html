@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety Locker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LOGIN -->
+    <section id="loginPage">
+        <h1>🔐 Safety Locker</h1>
+        <p>Secure File & Contact Locker</p>
+
+        <input type="password" id="password" placeholder="Enter password">
+        <button onclick="login()">Unlock</button>
+
+        <p id="attemptText">Attempts remaining: 5</p>
+        <p id="loginMessage"></p>
+    </section>
+
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="hidden">
+
+        <header>
+            <h1>🔐 My Safety Locker</h1>
+            <button onclick="lockLocker()">🔒 Lock</button>
+        </header>
+
+        <div class="cards">
+
+            <div class="card">
+                <h2>📁</h2>
+                <h3 id="fileCount">0</h3>
+                <p>Files / Photos</p>
+            </div>
+
+            <div class="card">
+                <h2>📞</h2>
+                <h3 id="phoneCount">0</h3>
+                <p>Phone Numbers</p>
+            </div>
+
+        </div>
+
+
+        <!-- FILE SECTION -->
+        <div class="box">
+            <h2>📁 Secure Files & Photos</h2>
+
+            <input
+                type="file"
+                id="fileInput"
+                accept="image/*,.pdf,.txt,.doc,.docx"
+                multiple
+            >
+
+            <button onclick="addFiles()">Add Files</button>
+
+            <ul id="fileList"></ul>
+        </div>
+
+
+        <!-- PHONE SECTION -->
+        <div class="box">
+            <h2>📞 Secure Phone Numbers</h2>
+
+            <input
+                type="text"
+                id="contactName"
+                placeholder="Name"
+            >
+
+            <input
+                type="tel"
+                id="phoneNumber"
+                placeholder="Phone number"
+            >
+
+            <button onclick="addPhone()">Save Number</button>
+
+            <ul id="phoneList"></ul>
+        </div>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
