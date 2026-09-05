@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safety Locker</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Secure Safety Locker">
+
+    <title>🔐 Safety Locker</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,87 +19,309 @@
 
 <div class="container">
 
-    <!-- LOGIN -->
+    <!-- =========================
+         LOGIN PAGE
+    ========================== -->
+
     <section id="loginPage">
-        <h1>🔐 Safety Locker</h1>
-        <p>Secure File & Contact Locker</p>
 
-        <input type="password" id="password" placeholder="Enter password">
-        <button onclick="login()">Unlock</button>
+        <div class="login-card">
 
-        <p id="attemptText">Attempts remaining: 5</p>
-        <p id="loginMessage"></p>
+            <div class="lock-icon">
+                🔐
+            </div>
+
+            <h1>Safety Locker</h1>
+
+            <p class="subtitle">
+                Secure File & Contact Locker
+            </p>
+
+            <label for="email">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                autocomplete="email"
+            >
+
+            <label for="password">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter password"
+                autocomplete="current-password"
+            >
+
+            <button
+                class="primary-btn"
+                onclick="login()">
+                🔓 Unlock Locker
+            </button>
+
+            <p id="loginMessage"></p>
+
+        </div>
+
     </section>
 
 
-    <!-- DASHBOARD -->
+    <!-- =========================
+         DASHBOARD
+    ========================== -->
+
     <section id="dashboard" class="hidden">
 
-        <header>
-            <h1>🔐 My Safety Locker</h1>
-            <button onclick="lockLocker()">🔒 Lock</button>
+        <!-- HEADER -->
+
+        <header class="dashboard-header">
+
+            <div>
+                <h1>🔐 Safety Locker</h1>
+
+                <p>
+                    Your private storage
+                </p>
+            </div>
+
+            <button
+                class="lock-btn"
+                onclick="lockLocker()">
+                🔒 Lock
+            </button>
+
         </header>
+
+
+        <!-- SECURITY STATUS -->
+
+        <div class="security-status">
+
+            <span class="status-dot"></span>
+
+            <span>
+                Locker Secure
+            </span>
+
+        </div>
+
+
+        <!-- =========================
+             COUNT CARDS
+        ========================== -->
 
         <div class="cards">
 
             <div class="card">
-                <h2>📁</h2>
-                <h3 id="fileCount">0</h3>
-                <p>Files / Photos</p>
+
+                <div class="card-icon">
+                    📁
+                </div>
+
+                <h2 id="fileCount">
+                    0
+                </h2>
+
+                <p>
+                    Files & Photos
+                </p>
+
             </div>
+
 
             <div class="card">
-                <h2>📞</h2>
-                <h3 id="phoneCount">0</h3>
-                <p>Phone Numbers</p>
+
+                <div class="card-icon">
+                    📞
+                </div>
+
+                <h2 id="phoneCount">
+                    0
+                </h2>
+
+                <p>
+                    Phone Numbers
+                </p>
+
             </div>
 
         </div>
 
 
-        <!-- FILE SECTION -->
+        <!-- =========================
+             FILE SECTION
+        ========================== -->
+
         <div class="box">
-            <h2>📁 Secure Files & Photos</h2>
 
-            <input
-                type="file"
-                id="fileInput"
-                accept="image/*,.pdf,.txt,.doc,.docx"
-                multiple
-            >
+            <div class="section-title">
 
-            <button onclick="addFiles()">Add Files</button>
+                <div>
+                    <h2>
+                        📁 Files & Photos
+                    </h2>
 
-            <ul id="fileList"></ul>
+                    <p>
+                        Store your private files
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="upload-area">
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    accept="
+                        image/*,
+                        .pdf,
+                        .txt,
+                        .doc,
+                        .docx
+                    "
+                    multiple
+                >
+
+                <button
+                    class="primary-btn"
+                    onclick="addFiles()">
+                    📤 Upload Files
+                </button>
+
+                <small>
+                    Images and documents • Maximum 10 MB per file
+                </small>
+
+            </div>
+
+
+            <ul id="fileList"
+                class="item-list">
+            </ul>
+
         </div>
 
 
-        <!-- PHONE SECTION -->
+        <!-- =========================
+             PHONE SECTION
+        ========================== -->
+
         <div class="box">
-            <h2>📞 Secure Phone Numbers</h2>
 
-            <input
-                type="text"
-                id="contactName"
-                placeholder="Name"
-            >
+            <div class="section-title">
 
-            <input
-                type="tel"
-                id="phoneNumber"
-                placeholder="Phone number"
-            >
+                <div>
+                    <h2>
+                        📞 Phone Numbers
+                    </h2>
 
-            <button onclick="addPhone()">Save Number</button>
+                    <p>
+                        Store important contacts
+                    </p>
+                </div>
 
-            <ul id="phoneList"></ul>
+            </div>
+
+
+            <div class="contact-form">
+
+                <input
+                    type="text"
+                    id="contactName"
+                    placeholder="Contact name"
+                    autocomplete="off"
+                >
+
+                <input
+                    type="tel"
+                    id="phoneNumber"
+                    placeholder="Phone number"
+                    autocomplete="off"
+                >
+
+                <button
+                    class="primary-btn"
+                    onclick="addPhone()">
+                    💾 Save Number
+                </button>
+
+            </div>
+
+
+            <ul id="phoneList"
+                class="item-list">
+            </ul>
+
         </div>
+
+
+        <!-- =========================
+             SECURITY INFORMATION
+        ========================== -->
+
+        <div class="security-box">
+
+            <h3>
+                🛡️ Security
+            </h3>
+
+            <p>
+                Your locker uses authenticated access
+                and private file storage.
+            </p>
+
+            <p>
+                🔒 Files are stored in a private
+                Supabase Storage bucket.
+            </p>
+
+            <p>
+                🔐 Access is limited to your account.
+            </p>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>
+                🔐 Safety Locker
+            </p>
+
+            <p>
+                Secure • Private • Protected
+            </p>
+
+        </footer>
 
     </section>
 
 </div>
 
+
+<!-- =========================
+     SUPABASE
+========================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<!-- =========================
+     YOUR JAVASCRIPT
+========================== -->
+
 <script src="script.js"></script>
 
 </body>
+
 </html>
